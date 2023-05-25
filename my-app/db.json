@@ -1,0 +1,23 @@
+{"user": [
+  {
+    "firstName": "H",
+    "lastName": "s",
+    "email": "hsg@gmail.com",
+    "profession": "Front End Developer",
+    "phoneNumber": "+919814268272",
+    "password": "admin",
+    "confirmPassword": "admin",
+    "id": 1
+  },
+  {
+    "firstName": "s",
+    "lastName": "s",
+    "email": "s@gmail.com",
+    "profession": "Front End Developer",
+    "phoneNumber": "+919814268272",
+    "password": "s",
+    "confirmPassword": "s",
+    "id": 2
+  } 
+]
+}
