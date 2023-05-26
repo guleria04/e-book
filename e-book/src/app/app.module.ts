@@ -7,7 +7,8 @@ import { AccountComponent } from './account/account.component';
 import { ForgotPasswordComponent } from './account/forgot-password/forgot-password.component';
 import { LoginComponent } from './account/login/login.component';
 import { RegisterComponent } from './account/register/register.component';
-
+import { RouterModule } from '@angular/router';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -15,11 +16,15 @@ import { RegisterComponent } from './account/register/register.component';
     AccountComponent,
     ForgotPasswordComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot([
+      {path: 'login', component: LoginComponent},
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent]

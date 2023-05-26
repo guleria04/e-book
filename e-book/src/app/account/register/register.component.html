@@ -1,7 +1,7 @@
 <section class="container-fluid" id="signUp">  
         <div class="row">
             <div class="col-md-3 m-auto p-5 my-5">
-                <div class="card p-3 shadow-sm border-0">
+                <div class="card p-3 shadow-sm rounded-0">
                     <div class="card-header bg-white border-0">
                         <h5 class="card-title text-center text-primary">E-Book Sign Up</h5>
                     </div>
@@ -31,11 +31,11 @@
                                 <label class="form-label small text-muted">Confirm Password</label>
                                 <input type="password" class="form-control shadow-sm rounded-0" placeholder="********">                             
                             </div>                         
-                            <button type="submit" class="btn bg-primary text-white w-100 rounded-0 shadow">Sign In</button>
+                            <button type="submit" class="btn bg-primary text-white w-100 rounded-0 shadow">Sign Up</button>
                         </form>
                     </div>
                     <div class="card-footer bg-white border-0 text-center py-0">
-                        <a href="#" class="text-center text-primary m-0">I'm new user</a>
+                        <a href="#" class="text-center text-primary m-0" [routerLink]="['/login']">I've already account</a>
                     </div>
                 </div>
             </div>
