@@ -13,7 +13,11 @@
 $font-family-base: "Montserrat", sans-serif;
 
 $theme-colors: (
-  "primary": $primary,
-  "secondary": $secondary,
+  "primary": $primary-color,
+  "secondary": $secondary-color,
+  "success":    $success-color,
+  "danger":     $danger-color,
+  "light":      $light-color,
+  "dark":       $dark-color,
 );
 
