@@ -10,6 +10,7 @@ import { RegisterComponent } from './account/register/register.component';
 import { RouterModule } from '@angular/router';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,12 +19,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     ForgotPasswordComponent,
     LoginComponent,
     RegisterComponent,
-    NotFoundComponent
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {path: 'login', component: LoginComponent},
     ]),
