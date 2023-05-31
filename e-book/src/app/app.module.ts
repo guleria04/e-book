@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     RegisterComponent,
     NotFoundComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,9 +30,12 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     RouterModule.forRoot([
       {path: 'login', component: LoginComponent},
+      { path: 'home', component: HomeComponent },
+      
     ]),
   ],
   providers: [],
   bootstrap: [AppComponent]
+
 })
 export class AppModule { }

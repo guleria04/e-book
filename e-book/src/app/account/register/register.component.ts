@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment.development';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -9,11 +10,8 @@ import { environment } from 'src/environments/environment.development';
   styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent {
- 
   submitted = false;
-  constructor(private http: HttpClient) {
-    console.log(environment.production)
-  }
+  constructor(private http: HttpClient, private router:Router) {}
 
   registerForm: FormGroup = new FormGroup({
     firstName: new FormControl('', Validators.required),
@@ -27,7 +25,7 @@ export class RegisterComponent {
     ]),
     confirmPassword: new FormControl('', Validators.required),
   });
-
+  // user validation 
   get userFirstName() {
     return this.registerForm.get('firstName');
   }

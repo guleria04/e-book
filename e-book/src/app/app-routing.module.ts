@@ -4,6 +4,7 @@ import { RegisterComponent } from './account/register/register.component';
 import { ForgotPasswordComponent } from './account/forgot-password/forgot-password.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { LoginComponent } from './account/login/login.component';
+import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -15,6 +16,9 @@ const routes: Routes = [
   },
   {
     path: 'forgot-password', component: ForgotPasswordComponent,
+  },
+  {
+    path: 'home', component: HomeComponent,
   },
   { path: '**',  component: NotFoundComponent },
 ];
