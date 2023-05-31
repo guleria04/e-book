@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent {
   submitted = false;
+  valueValid:boolean = false;
+  valueInalid: boolean = false;
   constructor(private http: HttpClient, private router:Router) {}
 
   registerForm: FormGroup = new FormGroup({
@@ -53,16 +55,24 @@ export class RegisterComponent {
       console.log(this.registerForm);
     }
   }
-
+  // add register form 
   onSubmit() {
     this.submitted = true;
     if (this.registerForm.invalid) {
       this.registerForm.markAllAsTouched();
       return;
     }
-    this.http.post(environment.userApi + 'user', this.registerForm.value).subscribe((data) => {
-      console.log(data);
-    });
+    this.http.post(environment.userApi + 'user', this.registerForm.value).subscribe(res=>{
+      this.valueValid = true;
+    },err=>{
+      this.valueInalid = true;
+    })
   }
-  
+
+  signUp() {
+    this.valueValid = !this.valueValid;
+  }
+  signUpInvalid() {
+    this.valueInalid = !this.valueInalid;
+  }
 }

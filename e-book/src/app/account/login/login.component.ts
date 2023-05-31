@@ -16,7 +16,9 @@ import { environment } from 'src/environments/environment.development';
 })
 export class LoginComponent {
   submitted = false;
-  setValue: any;    
+  setValue: any; 
+  display:boolean = false;
+  isDisplay:boolean = false;
   constructor(private  http: HttpClient, private router:Router) { 
   }
   loginForm: FormGroup = new FormGroup({
@@ -42,12 +44,11 @@ export class LoginComponent {
   onSubmit() {
     // validation check
     this.submitted = true;
-
     if (this.loginForm.invalid) {
       this.loginForm.markAllAsTouched();
       return;
     }
-
+   
     // submit login on click
     this.http.get<any>(environment.userApi + 'user').subscribe(
       (res: any) => {
@@ -58,16 +59,19 @@ export class LoginComponent {
           );
         });
 
-        if (userCredential) {
-          alert('Login Successful');   
+        if (userCredential) { 
           this.router.navigate(["/home"]);        
-        } else {
-          alert('User not found');
+        } else { 
+          this.display = true;
         }
       },
       (_err) => {
         alert('Something went wrong');
       }
     );
+  }
+
+  invalidClick() {
+    this.display = !this.display;
   }
 }

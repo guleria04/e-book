@@ -1,5 +1,23 @@
 <section class="container-fluid" id="signUp">
     <div class="row">
+        <div class="col-12 position-relative"> 
+            <div class="align-items-center text-bg-success border-0 rounded-0 position-absolute top-0 end-0 m-3 px-3 shadow" *ngIf="valueValid">
+                <div class="d-flex">
+                  <div class="p-2 small">
+                   Sign Up Successfully
+                  </div> 
+                  <button type="button" class="btn-close btn-close-white me-2 m-auto small ms-3" (click)="signUp()"></button>
+                </div>
+              </div>
+              <div class="align-items-center text-bg-danger border-0 rounded-0 position-absolute top-0 end-0 m-3 px-3 shadow" *ngIf="valueInalid">
+                <div class="d-flex">
+                  <div class="p-2 small">
+                    Something went wrong
+                  </div> 
+                  <button type="button" class="btn-close btn-close-white me-2 m-auto small ms-3" (click)="signUpInvalid()"></button>
+                </div>
+              </div>
+        </div>
         <div class="col-md-3 m-auto p-5 my-5">
             <div class="card p-3 shadow-sm rounded-0 border-0">
                 <div class="card-header bg-white border-0">

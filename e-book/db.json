@@ -27,13 +27,40 @@
       "id": 2
     },
     {
-      "firstName": "bunty",
-      "lastName": "salaria",
-      "city": "mohali",
-      "email": "bunty@gmail.com",
-      "password": "123456",
-      "confirmPassword": "123456",
+      "firstName": "Bunty",
+      "lastName": "Salaria",
+      "city": "Mohali",
+      "email": "buntysalaria@gmail.com",
+      "password": "12345",
+      "confirmPassword": "12345",
       "id": 3
-    } 
+    },
+    {
+      "firstName": "Aman",
+      "lastName": "Thakur",
+      "city": "Chandigarh",
+      "email": "aman@gmail.com",
+      "password": "12345",
+      "confirmPassword": "12345",
+      "id": 4
+    },
+    {
+      "firstName": "Rajeev",
+      "lastName": "Salaris",
+      "city": "Chandigarh",
+      "email": "rajeev@gmail.com",
+      "password": "12345",
+      "confirmPassword": "12345",
+      "id": 5
+    },
+    {
+      "firstName": "Kanchan",
+      "lastName": "Kaur",
+      "city": "Mohali",
+      "email": "kanchan@gmail.com",
+      "password": "12345",
+      "confirmPassword": "12345",
+      "id": 6
+    }
   ]
 }
