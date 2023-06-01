@@ -44,8 +44,16 @@
                                     <a href="#" class="text-primary small">Forgot Password?</a>
                                 </span>
                             </div>
-                            <input type="password" class="form-control shadow-sm rounded-0" placeholder="********"
-                                formControlName="password">
+                            <div class="input-group mb-3">
+                                <input class="form-control shadow-sm rounded-0" placeholder="********"
+                                    formControlName="confirmPassword" [type]="fieldTextTypePassword ? 'text' : 'password'">
+                                <span class="input-group-text rounded-0">
+                                    <i class="fa" [ngClass]="{
+                                        'fa-eye-slash': !fieldTextTypePassword,
+                                        'fa-eye': fieldTextTypePassword
+                                      }" (click)="showPassword()"></i>
+                                </span>
+                                </div>
                             <span class="text-danger mt-1 small"
                                 *ngIf="loginPassword && loginPassword.invalid && loginPassword.touched">This is
                                 required

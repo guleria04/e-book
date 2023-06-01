@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms'; 
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth/auth.service';
 @Component({
@@ -9,9 +9,12 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 })
 export class RegisterComponent {
   submitted = false;
-  valueValid:boolean = false;
-  valueInalid: boolean = false;
-  constructor(private authServices: AuthService, private router:Router) {}
+  valueValid: boolean = false;
+  valueInvalid: boolean = false;
+  fieldTextType: boolean = false;
+  fieldTextTypePassword: boolean = false;
+  fieldTextTypeConfirmPassword: boolean = false;
+  constructor(private authServices: AuthService, private router: Router) {}
 
   registerForm: FormGroup = new FormGroup({
     firstName: new FormControl('', Validators.required),
@@ -25,12 +28,12 @@ export class RegisterComponent {
     ]),
     confirmPassword: new FormControl('', Validators.required),
   });
-  // user validation 
+  // user validation
   get userFirstName() {
     return this.registerForm.get('firstName');
   }
 
-  get userlastName() {
+  get userLastName() {
     return this.registerForm.get('lastName');
   }
   get userCity() {
@@ -53,24 +56,36 @@ export class RegisterComponent {
       console.log(this.registerForm);
     }
   }
-  // add register form 
+  // add register form
   onSubmit() {
     this.submitted = true;
     if (this.registerForm.invalid) {
       this.registerForm.markAllAsTouched();
       return;
     }
-    this.authServices.signUp(this.registerForm.value).subscribe(res=>{
-      this.valueValid = true;
-    },err=>{
-      this.valueInalid = true;
-    })
+    this.authServices.signUp(this.registerForm.value).subscribe(
+      (res) => {
+        this.valueValid = true;
+      },
+      (err) => {
+        this.valueInvalid = true;
+      }
+    );
   }
 
   signUp() {
     this.valueValid = !this.valueValid;
   }
+  // this is signUp invalided
   signUpInvalid() {
-    this.valueInalid = !this.valueInalid;
+    this.valueInvalid = !this.valueInvalid;
+  }
+  // this is show password
+  showPassword() {
+    this.fieldTextTypePassword = !this.fieldTextTypePassword;
+  }
+  // this is show confirm password
+  showConfirmPassword() {
+    this.fieldTextTypeConfirmPassword = !this.fieldTextTypeConfirmPassword;
   }
 }
