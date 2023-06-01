@@ -70,15 +70,6 @@
       "password": "123",
       "confirmPassword": "123",
       "id": 7
-    },
-    {
-      "firstName": "Hardip",
-      "lastName": "Singh",
-      "city": "Mohali",
-      "email": "hdip@gmail.com",
-      "password": "123",
-      "confirmPassword": "123",
-      "id": 8
-    }
+    } 
   ]
 }

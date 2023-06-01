@@ -14,6 +14,7 @@ export class RegisterComponent {
   valueValid:boolean = false;
   valueInalid: boolean = false;
   constructor(private http: HttpClient, private router:Router) {}
+
   registerForm: FormGroup = new FormGroup({
     firstName: new FormControl('', Validators.required),
     lastName: new FormControl('', Validators.required),
@@ -67,6 +68,7 @@ export class RegisterComponent {
       this.valueInalid = true;
     })
   }
+
   signUp() {
     this.valueValid = !this.valueValid;
   }
