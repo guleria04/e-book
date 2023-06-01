@@ -1,9 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, Injectable } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { environment } from 'src/environments/environment.development';
- 
+import { AuthService } from 'src/app/services/auth/auth.service'; 
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +16,8 @@ export class LoginComponent {
   setValue: any; 
   display:boolean = false;
   isDisplay:boolean = false;
-  constructor(private  http: HttpClient, private router:Router) { 
+  isUnDisplay:boolean =false;
+  constructor(private  authServices: AuthService, private router:Router) { 
   }
   loginForm: FormGroup = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -49,7 +48,7 @@ export class LoginComponent {
     }
    
     // submit login on click
-    this.http.get<any>(environment.apiPath + 'user').subscribe(
+    this.authServices.signIn().subscribe(
       (res: any) => {
         const userCredential = res.find((result: any) => {
           return (
@@ -64,12 +63,16 @@ export class LoginComponent {
           this.display = true;
         }
       },
-      (_err) => {
-        alert('Something went wrong');
+      (_err) => { 
+        this.isUnDisplay = true;
       }
     );
   }
-
+// this is not api work pass msg
+  unDisplayClick() {
+    this.isUnDisplay = !this.isUnDisplay;
+  }
+// this is not login add properly 
   invalidClick() {
     this.display = !this.display;
   }

@@ -70,6 +70,51 @@
       "password": "123",
       "confirmPassword": "123",
       "id": 7
+    },
+    {
+      "firstName": "Hdip",
+      "lastName": "Singh",
+      "city": "Mohali",
+      "email": "hsdip@hs.com",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": 8
+    },
+    {
+      "firstName": "jsdjkdfh",
+      "lastName": "kjfhljkdf",
+      "city": "jklkjsfds",
+      "email": "hs@dd.com",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": 9
+    },
+    {
+      "firstName": "Aman",
+      "lastName": "karal",
+      "city": "GSP",
+      "email": "ak@ak.com",
+      "password": "1234",
+      "confirmPassword": "1234",
+      "id": 10
+    },
+    {
+      "firstName": "Sunny",
+      "lastName": "Singh",
+      "city": "ss@gmail.com",
+      "email": "hh@gmail.com",
+      "password": "1234",
+      "confirmPassword": "1234",
+      "id": 11
+    },
+    {
+      "firstName": "ss",
+      "lastName": "ss",
+      "city": "city",
+      "email": "ss@gmail.com",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": 12
     } 
   ]
 }

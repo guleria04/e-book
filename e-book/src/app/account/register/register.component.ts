@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment.development';
+import { FormGroup, FormControl, Validators } from '@angular/forms'; 
 import { Router } from '@angular/router';
-
+import { AuthService } from 'src/app/services/auth/auth.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -13,7 +11,7 @@ export class RegisterComponent {
   submitted = false;
   valueValid:boolean = false;
   valueInalid: boolean = false;
-  constructor(private http: HttpClient, private router:Router) {}
+  constructor(private authServices: AuthService, private router:Router) {}
 
   registerForm: FormGroup = new FormGroup({
     firstName: new FormControl('', Validators.required),
@@ -62,7 +60,7 @@ export class RegisterComponent {
       this.registerForm.markAllAsTouched();
       return;
     }
-    this.http.post(environment.apiPath + 'user', this.registerForm.value).subscribe(res=>{
+    this.authServices.signUp(this.registerForm.value).subscribe(res=>{
       this.valueValid = true;
     },err=>{
       this.valueInalid = true;

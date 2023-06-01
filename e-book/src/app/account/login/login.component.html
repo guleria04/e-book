@@ -1,12 +1,20 @@
 <section class="container-fluid" id="signIn">
     <div class="row">
         <div class="col-12 position-relative"> 
-            <div class="align-items-center text-bg-danger border-0 rounded-0 position-absolute top-0 end-0 m-3 px-3 shadow" *ngIf="display">
+            <div class="align-items-center text-bg-danger border-0 rounded-0 position-absolute top-0 end-0 m-3 shadow" *ngIf="display">
                 <div class="d-flex">
                   <div class="p-2 small">
                     Invalid credential. Please try again. 
                   </div> 
                   <button type="button" class="btn-close btn-close-white me-2 m-auto small ms-3" (click)="invalidClick()"></button>
+                </div>
+              </div>
+              <div class="align-items-center text-bg-danger border-0 rounded-0 position-absolute top-0 end-0 m-3 shadow" *ngIf="isUnDisplay">
+                <div class="d-flex">
+                  <div class="p-2 small">
+                    Something went wrong.
+                  </div> 
+                  <button type="button" class="btn-close btn-close-white me-2 m-auto small ms-3" (click)="unDisplayClick()"></button>
                 </div>
               </div>
         </div>

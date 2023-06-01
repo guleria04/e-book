@@ -1,6 +1,5 @@
-import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
-import { environment } from 'src/environments/environment.development';
+import { Component } from '@angular/core'; 
+import { AuthService } from 'src/app/services/auth/auth.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -9,18 +8,14 @@ import { environment } from 'src/environments/environment.development';
 export class HomeComponent { 
   table:any;
   userData: any =[];
-  constructor(private http: HttpClient,) {}
+  constructor(private authServices: AuthService,) {}
   ngOnInit() { 
-    this.http.get<any>(environment.apiPath + 'user').subscribe((data =>{
+    this.authServices.signIn().subscribe((data =>{
       console.log(data)
-      // this.table = data;
       this.userData=data;
       if(data === true) {
         this.table.append('<tr><td></td></tr>');
       }
     }))
-    
   }
-
-
 }

@@ -2,7 +2,7 @@
 <section class="container-fluid" id="signUp">
     <div class="row">
         <div class="col-12 position-relative"> 
-            <div class="align-items-center text-bg-success border-0 rounded-0 position-absolute top-0 end-0 m-3 px-3 shadow" *ngIf="valueValid">
+            <div class="align-items-center text-bg-success border-0 rounded-0 position-absolute top-0 end-0 m-3 shadow" *ngIf="valueValid">
                 <div class="d-flex">
                   <div class="p-2 small">
                    Sign Up Successfully
@@ -10,7 +10,7 @@
                   <button type="button" class="btn-close btn-close-white me-2 m-auto small ms-3" (click)="signUp()"></button>
                 </div>
               </div>
-              <div class="align-items-center text-bg-danger border-0 rounded-0 position-absolute top-0 end-0 m-3 px-3 shadow" *ngIf="valueInalid">
+              <div class="align-items-center text-bg-danger border-0 rounded-0 position-absolute top-0 end-0 m-3 shadow" *ngIf="valueInalid">
                 <div class="d-flex">
                   <div class="p-2 small">
                     Something went wrong
@@ -84,7 +84,6 @@
                             <span class="text-danger small mt-1"
                                 *ngIf="userConfPassword && userConfPassword.invalid && userConfPassword.touched">This is
                                 required field.</span>
-                            <!-- <span class="text-danger mt-1  small">Passwords don't match.</span> -->
                         </div>
                         <button type="submit" class="btn bg-primary text-white w-100 rounded-0 shadow"  
                            >Sign Up</button>
