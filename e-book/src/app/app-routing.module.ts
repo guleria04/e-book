@@ -7,20 +7,34 @@ import { LoginComponent } from './account/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
-  {
-    path: 'login', component: LoginComponent,
+ //default router
+  { 
+    path: '', 
+    redirectTo: 'login', 
+    pathMatch: 'full' 
   },
+ //login router  
   {
-    path: 'register', component: RegisterComponent,
+    path: 'login',
+    component: LoginComponent,
   },
+ //register router
   {
-    path: 'forgot-password', component: ForgotPasswordComponent,
+    path: 'register',
+    component: RegisterComponent,
   },
+ //forgot password router
   {
-    path: 'home', component: HomeComponent,
+    path: 'forgot-password',
+    component: ForgotPasswordComponent,
   },
-  { path: '**',  component: NotFoundComponent },
+ //home router
+  {
+    path: 'home',
+    component: HomeComponent,
+  },
+ //not found router
+  { path: '**', component: NotFoundComponent },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

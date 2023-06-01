@@ -14,7 +14,6 @@ export class RegisterComponent {
   valueValid:boolean = false;
   valueInalid: boolean = false;
   constructor(private http: HttpClient, private router:Router) {}
-
   registerForm: FormGroup = new FormGroup({
     firstName: new FormControl('', Validators.required),
     lastName: new FormControl('', Validators.required),
@@ -62,13 +61,12 @@ export class RegisterComponent {
       this.registerForm.markAllAsTouched();
       return;
     }
-    this.http.post(environment.userApi + 'user', this.registerForm.value).subscribe(res=>{
+    this.http.post(environment.apiPath + 'user', this.registerForm.value).subscribe(res=>{
       this.valueValid = true;
     },err=>{
       this.valueInalid = true;
     })
   }
-
   signUp() {
     this.valueValid = !this.valueValid;
   }

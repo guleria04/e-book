@@ -50,7 +50,7 @@ export class LoginComponent {
     }
    
     // submit login on click
-    this.http.get<any>(environment.userApi + 'user').subscribe(
+    this.http.get<any>(environment.apiPath + 'user').subscribe(
       (res: any) => {
         const userCredential = res.find((result: any) => {
           return (

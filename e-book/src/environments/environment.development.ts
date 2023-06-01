@@ -1,4 +1,5 @@
 export const environment = {
+    // use this apiPath for global api path 
     production:true,
-    userApi: 'http://localhost:3000/'
+    apiPath: 'http://localhost:3000/'
 };

@@ -11,13 +11,9 @@ export class HomeComponent {
   userData: any = []
   constructor(private http: HttpClient,) {}
   ngOnInit() { 
-  
-    this.http.get<any>(environment.userApi + 'user').subscribe((data =>{
+    this.http.get<any>(environment.apiPath + 'user').subscribe((data =>{
       console.log(data)
       this.userData = data;
     }))
-    
   }
-
-
 }
