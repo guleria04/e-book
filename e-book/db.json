@@ -61,6 +61,24 @@
       "password": "12345",
       "confirmPassword": "12345",
       "id": 6
+    },
+    {
+      "firstName": "Sunil ",
+      "lastName": "Salaria",
+      "city": "Mohali",
+      "email": "ss@gmail.com",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": 7
+    },
+    {
+      "firstName": "Sunil ",
+      "lastName": "Salaria",
+      "city": "Mohali",
+      "email": "ss@gmail.com",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": 8
     }
   ]
 }

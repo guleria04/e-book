@@ -49,8 +49,12 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td></td>
+            <tr *ngFor="let user of userData">
+              <td>{{user.id}}</td>
+              <td>{{user.firstName}}</td>
+              <td>{{user.lastName}}</td>
+              <td>{{user.city}}</td>
+              <td>{{user.email}}</td>
             </tr>
             
           </tbody>
