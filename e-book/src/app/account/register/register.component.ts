@@ -1,32 +1,42 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  FormBuilder,
+  AbstractControl,
+} from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth/auth.service';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent {
-  submitted = false;
+  submitted: boolean = false;
   valueValid: boolean = false;
   valueInvalid: boolean = false;
   fieldTextType: boolean = false;
   fieldTextTypePassword: boolean = false;
   fieldTextTypeConfirmPassword: boolean = false;
-  constructor(private authServices: AuthService, private router: Router) {}
+  confirmPassword:boolean=false; 
+  formBuilder: any;
+  constructor(
+    private authServices: AuthService,
+    private router: Router,
+    private fb: FormBuilder
+  ) {}
 
-  registerForm: FormGroup = new FormGroup({
+  registerForm: FormGroup = new FormGroup(
+    {
     firstName: new FormControl('', Validators.required),
     lastName: new FormControl('', Validators.required),
     city: new FormControl('', Validators.required),
     email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [
-      Validators.required,
-      Validators.minLength(2),
-      Validators.maxLength(12),
-    ]),
-    confirmPassword: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required),
+    ConfirmPassword: new FormControl('', Validators.required),
   });
   // user validation
   get userFirstName() {
@@ -48,7 +58,7 @@ export class RegisterComponent {
   }
 
   get userConfPassword() {
-    return this.registerForm.get('confirmPassword');
+    return this.registerForm.get('ConfirmPassword');
   }
 
   saveList(isValid: boolean) {
@@ -56,6 +66,7 @@ export class RegisterComponent {
       console.log(this.registerForm);
     }
   }
+   
   // add register form
   onSubmit() {
     this.submitted = true;
@@ -63,6 +74,17 @@ export class RegisterComponent {
       this.registerForm.markAllAsTouched();
       return;
     }
+    // this is validation confirm password
+   let password = this.registerForm.get('password')?.value;
+   let showConfirmPassword = this.registerForm.get('ConfirmPassword')?.value;
+   if (password === showConfirmPassword) {
+     this.submitted = true;
+   } else {
+     this.submitted = false; 
+     this.confirmPassword= true;
+     return;
+   }
+    // this is sign up 
     this.authServices.signUp(this.registerForm.value).subscribe(
       (res) => {
         this.valueValid = true;
@@ -72,11 +94,11 @@ export class RegisterComponent {
       }
     );
   }
-
+  // this is signUp Valid
   signUp() {
     this.valueValid = !this.valueValid;
   }
-  // this is signUp invalided
+  // this is signUp invalid
   signUpInvalid() {
     this.valueInvalid = !this.valueInvalid;
   }

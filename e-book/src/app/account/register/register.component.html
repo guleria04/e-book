@@ -77,7 +77,7 @@
                             </label>
                             <div class="input-group mb-3">
                                 <input class="form-control shadow-sm rounded-0" placeholder="********"
-                                    formControlName="confirmPassword"
+                                    formControlName="password"
                                     [type]="fieldTextTypePassword ? 'text' : 'password'" />
                                 <span class="input-group-text rounded-0">
                                     <i class="fa" [ngClass]="{
@@ -93,9 +93,9 @@
                         <div class="mb-3">
                             <label class="form-label small text-muted">Confirm Password <span
                                     class="text-danger">*</span></label>
-                            <div class="input-group mb-3">
+                            <div class="input-group">
                                 <input class="form-control shadow-sm rounded-0" placeholder="********"
-                                    formControlName="confirmPassword"
+                                    formControlName="ConfirmPassword"
                                     [type]="fieldTextTypeConfirmPassword ? 'text' : 'password'" />
                                 <span class="input-group-text rounded-0">
                                     <i class="fa" [ngClass]="{
@@ -111,11 +111,7 @@
                 ">
                                 This is required field.
                             </span>
-                            <span class="text-danger small mt-1" *ngIf="
-                  userConfPassword &&
-                  userConfPassword.invalid &&
-                  userConfPassword.touched
-                ">
+                             <span class="text-danger small mt-1" *ngIf="confirmPassword">
                                 Password did not match.
                             </span>
                         </div>
