@@ -70,6 +70,9 @@
                   registerForm.get('email')?.hasError('email') &&
                   registerForm.get('email')?.touched
                 ">Invalid email address.</span>
+                 <span *ngIf="registerForm.get('email')?.hasError('emailExists') && registerForm.get('email')?.dirty">
+                    Email already exists.
+                  </span>
                         </div>
                         <div class="mb-3">
                             <label class="form-label small text-muted">Password
@@ -94,7 +97,7 @@
                             <label class="form-label small text-muted">Confirm Password <span
                                     class="text-danger">*</span></label>
                             <div class="input-group">
-                                <input class="form-control shadow-sm rounded-0" placeholder="********"
+                                <input class="form-control shadow-sm rounded-0" placeholder="********" (keyup)="confirmPasswordValidate()"
                                     formControlName="ConfirmPassword"
                                     [type]="fieldTextTypeConfirmPassword ? 'text' : 'password'" />
                                 <span class="input-group-text rounded-0">
