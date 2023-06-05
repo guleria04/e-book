@@ -26,22 +26,23 @@ export class RegisterComponent {
   confirmPassword: boolean = false;
   formBuilder: any;
   emailExists: boolean = false;
-  userData: any =[];
+  userData: any = [];
+  usersEmail: any;
+  user: any;
+  isDuplicateEmail: boolean = false;
   constructor(
     private authServices: AuthService,
     private router: Router,
     private fb: FormBuilder
   ) { }
-  registerForm: FormGroup = new FormGroup(
-    {
-      firstName: new FormControl('', Validators.required),
-      lastName: new FormControl('', Validators.required),
-      city: new FormControl('', Validators.required),
-      email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', Validators.required),
-      ConfirmPassword: new FormControl('', Validators.required),
-    });
-
+  registerForm: FormGroup = new FormGroup({
+    firstName: new FormControl('', Validators.required),
+    lastName: new FormControl('', Validators.required),
+    city: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', Validators.required),
+    ConfirmPassword: new FormControl('', Validators.required),
+  });
 
   // user validation
   get userFirstName() {
@@ -71,8 +72,8 @@ export class RegisterComponent {
       console.log(this.registerForm);
     }
   }
-  // this is confirm password validation 
-   confirmPasswordValidate() {
+  // this is confirm password validation
+  confirmPasswordValidate() {
     let password = this.registerForm.get('password')?.value;
     let showConfirmPassword = this.registerForm.get('ConfirmPassword')?.value;
     if (password === showConfirmPassword) {
@@ -81,41 +82,57 @@ export class RegisterComponent {
       this.confirmPassword = true;
     }
   }
-  ngOnInit() {
-    this.authServices.signIn().subscribe((data) => {
-     let a = data;
-     console.log(a)
-    })
-  }
-    
-  
-  // checkDuplicateEmail() {
-   
-  // };
-  // add register form
+
+  // submit register form
   onSubmit() {
     this.submitted = true;
     if (this.registerForm.invalid) {
       this.registerForm.markAllAsTouched();
+      this.isDuplicateEmail = true;
       return;
-    } 
+    }
+
     // this is validation confirm password
-    // let password = this.registerForm.get('password')?.value;
-    // let showConfirmPassword = this.registerForm.get('ConfirmPassword')?.value;
-    // if (password === showConfirmPassword) {
-    //   this.submitted = true;
-    // } else {
-    //   this.submitted = false;
-    //   this.confirmPassword = true;
-    //   return;
-    // }
-    // this is sign up 
+    let password = this.registerForm.get('password')?.value;
+    let showConfirmPassword = this.registerForm.get('ConfirmPassword')?.value;
+    if (password === showConfirmPassword) {
+      this.submitted = true;
+    } else {
+      this.submitted = false;
+      this.confirmPassword = true;
+      return;
+    }
+
+    // this is validation check exist email
+    // let registerEmail = this.registerForm.get('email')?.value;
+    // this.authServices.signIn().subscribe((data) => {
+    //   this.userData = data;
+    //   let matchFound = false;
+    //   for (let user of this.userData) {
+    //     this.usersEmail = user.email;
+    //     if (registerEmail === this.usersEmail) {
+    //       matchFound = true; 
+    //       break;
+    //     }
+    //   }
+    //   if (matchFound) {
+    //     this.isDuplicateEmail = true;
+    //     this.submitted = false;
+    //     return;
+    //   } else {
+    //     this.isDuplicateEmail = false;
+    //     this.submitted = true;
+    //   }
+    // });
+    // this is sign up
     this.authServices.signUp(this.registerForm.value).subscribe(
       (res) => {
         this.valueValid = true;
       },
       (err) => {
         this.valueInvalid = true;
+        this.isDuplicateEmail = true;
+        this.submitted = false;
       }
     );
   }
@@ -136,6 +153,3 @@ export class RegisterComponent {
     this.fieldTextTypeConfirmPassword = !this.fieldTextTypeConfirmPassword;
   }
 }
-
-
-

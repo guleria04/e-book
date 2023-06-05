@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './pages/home/home.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { UploadProductComponent } from './pages/upload-product/upload-product.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { FooterComponent } from './shared/footer/footer.component';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
+    UploadProductComponent,
   ],
   imports: [
     BrowserModule,

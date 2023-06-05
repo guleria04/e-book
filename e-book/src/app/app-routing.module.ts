@@ -5,6 +5,7 @@ import { ForgotPasswordComponent } from './account/forgot-password/forgot-passwo
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { LoginComponent } from './account/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
+import { UploadProductComponent } from './pages/upload-product/upload-product.component';
 
 const routes: Routes = [
  //default router
@@ -32,6 +33,11 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+  },
+   //upload-product router
+   {
+    path: 'upload-product',
+    component: UploadProductComponent,
   },
  //not found router
   { path: '**', component: NotFoundComponent },

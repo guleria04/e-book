@@ -1,20 +1,38 @@
 <!-- navbar -->
 <nav class="navbar navbar-expand-lg bg-light shadow-sm">
-    <div class="container-fluid">
-      <a class="navbar-brand fw-bold"><span class="text-secondary">E-</span><span class="text-primary">Book</span></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link">Services</a>
-          </li>
-        </ul>
-      </div>
+  <div class="container-fluid">
+    <!-- logo -->
+    <a class="navbar-brand fw-bold"><span class="text-secondary">E-</span><span class="text-primary">Book</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+     <!-- /logo -->
+    <!-- search bar -->
+    <div class="w-50 position-relative">
+      <span>
+        <input type="text" class="form-control rounded-0 shadow-sm" id="searchBar" placeholder="Search books" />
+      </span>
+      <span class="position-absolute top-0 end-0 me-3 pt-1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="text-secondary">
+          <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+            d="m21 21l-4.343-4.343m0 0A8 8 0 1 0 5.343 5.343a8 8 0 0 0 11.314 11.314Z" />
+        </svg>
+      </span>
     </div>
-  </nav>
+    <!-- /search bar -->
+    <!-- btn login & upload product -->
+    <div class="d-flex"> 
+      <div [routerLink]="['/login']" class=" align-self-center me-4 text-muted">
+        Log in
+      </div>
+      <button class="btn bg-primary shadow text-white rounded-0" [routerLink]="['/upload-product']"><span class="small">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="me-2" width="21" height="21" viewBox="0 0 21 21"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="m6.5 7.753l4-4.232l4 4.191m-4-4.212v11m-6 3h12"/></svg>
+        </span>
+        <span>Upload Product</span></span></button>
+    </div>
+    <!-- /btn login & upload product -->
+  </div>
+</nav>
 <!-- /navbar -->
