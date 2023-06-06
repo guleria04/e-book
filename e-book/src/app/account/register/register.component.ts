@@ -34,7 +34,7 @@ export class RegisterComponent {
     private authServices: AuthService,
     private router: Router,
     private fb: FormBuilder
-  ) { }
+  ) {}
   registerForm: FormGroup = new FormGroup({
     firstName: new FormControl('', Validators.required),
     lastName: new FormControl('', Validators.required),
@@ -82,15 +82,28 @@ export class RegisterComponent {
       this.confirmPassword = true;
     }
   }
-
+  ngOnInit() {}
   // submit register form
   onSubmit() {
     this.submitted = true;
     if (this.registerForm.invalid) {
       this.registerForm.markAllAsTouched();
-      this.isDuplicateEmail = true;
       return;
     }
+    // this is validation check exist email
+    this.authServices.signIn().subscribe((data) => {
+      this.userData = data;
+      let registerEmail = this.registerForm.get('email')?.value;
+      let isEmail = this.userData.some(
+        (user: any) => user.email === registerEmail
+      );
+      console.log(isEmail);
+      if (isEmail) {
+        console.log('Email match');
+      } else {
+        console.log('Email does not match');
+      }
+    });
 
     // this is validation confirm password
     let password = this.registerForm.get('password')?.value;
@@ -103,27 +116,6 @@ export class RegisterComponent {
       return;
     }
 
-    // this is validation check exist email
-    // let registerEmail = this.registerForm.get('email')?.value;
-    // this.authServices.signIn().subscribe((data) => {
-    //   this.userData = data;
-    //   let matchFound = false;
-    //   for (let user of this.userData) {
-    //     this.usersEmail = user.email;
-    //     if (registerEmail === this.usersEmail) {
-    //       matchFound = true; 
-    //       break;
-    //     }
-    //   }
-    //   if (matchFound) {
-    //     this.isDuplicateEmail = true;
-    //     this.submitted = false;
-    //     return;
-    //   } else {
-    //     this.isDuplicateEmail = false;
-    //     this.submitted = true;
-    //   }
-    // });
     // this is sign up
     this.authServices.signUp(this.registerForm.value).subscribe(
       (res) => {
@@ -131,8 +123,6 @@ export class RegisterComponent {
       },
       (err) => {
         this.valueInvalid = true;
-        this.isDuplicateEmail = true;
-        this.submitted = false;
       }
     );
   }

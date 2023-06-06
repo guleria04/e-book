@@ -74,6 +74,10 @@
                  <span *ngIf="registerForm.get('email')?.hasError('emailExists') && registerForm.get('email')?.dirty">
                     Email already exists.
                   </span>
+                  <span class="text-danger mt-1 small" *ngIf="isDuplicateEmail">
+                    Email Match
+                  </span>
+                  
                         </div>
                         <div class="mb-3">
                             <label class="form-label small text-muted">Password
