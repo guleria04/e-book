@@ -10,7 +10,7 @@
         <input type="text" class="form-control rounded-0 shadow-sm" id="searchBar" placeholder="Search books" />
       </span>
       <span class="position-absolute top-0 end-0 me-3 pt-1">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="text-secondary">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="text-secondary mt-1">
           <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
             d="m21 21l-4.343-4.343m0 0A8 8 0 1 0 5.343 5.343a8 8 0 0 0 11.314 11.314Z" />
         </svg>
@@ -21,6 +21,12 @@
     <div class="d-flex"> 
       <div [routerLink]="['/login']" class=" align-self-center me-4 text-muted">
         Log in
+      </div>
+      <div class="align-self-center me-4">
+         <span class="me-1">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#F05FA3" d="m12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5C2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53L12 21.35Z"/></svg>   
+        </span>
+         <span class="text-muted">Wishlist</span>
       </div>
       <button class="btn bg-primary shadow text-white rounded-0" [routerLink]="['/upload-product']"><span class="small">
         <span>

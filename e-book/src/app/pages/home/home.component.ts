@@ -7,6 +7,7 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 })
 export class HomeComponent { 
   table:any;
+  classToggled = false; 
   userData: any =[];
   constructor(private authServices: AuthService,) {}
   ngOnInit() { 
@@ -17,5 +18,12 @@ export class HomeComponent {
         this.table.append('<tr><td></td></tr>');
       }
     }))
+    
   }
+  // svg color
+  svgIcon() {
+   this.classToggled = !this.classToggled;
+  }
+
+  
 }

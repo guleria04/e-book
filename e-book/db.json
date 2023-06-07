@@ -79,6 +79,42 @@
       "password": "12",
       "ConfirmPassword": "12",
       "id": 8
+    },
+    {
+      "firstName": "Shivam",
+      "lastName": "Dutt",
+      "city": "Chandigarh",
+      "email": "sd@gmail.com",
+      "password": "123",
+      "ConfirmPassword": "123",
+      "id": 9
+    },
+    {
+      "firstName": "Ishaan",
+      "lastName": "Singh",
+      "city": "Jammu",
+      "email": "ishaan@gmail.com",
+      "password": "12",
+      "ConfirmPassword": "12",
+      "id": 10
+    },
+    {
+      "firstName": "Himanshu",
+      "lastName": "Singh",
+      "city": "UP",
+      "email": "himanshu@gmail.com",
+      "password": "123",
+      "ConfirmPassword": "123",
+      "id": 11
+    },
+    {
+      "firstName": "Chamn",
+      "lastName": "Singh",
+      "city": "HP",
+      "email": "chman@gmail.com",
+      "password": "123",
+      "ConfirmPassword": "123",
+      "id": 12
     }
   ]
 }
