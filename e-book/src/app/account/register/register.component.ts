@@ -4,11 +4,8 @@ import {
   FormControl,
   Validators,
   FormBuilder,
-  AbstractControl,
-  ValidationErrors,
 } from '@angular/forms';
-import { Router } from '@angular/router';
-import { Observable, map } from 'rxjs';
+import { Router } from '@angular/router'; 
 import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
@@ -82,7 +79,7 @@ export class RegisterComponent {
       this.confirmPassword = true;
     }
   }
-  ngOnInit() {}
+
   // submit register form
   onSubmit() {
     this.submitted = true;
@@ -90,22 +87,7 @@ export class RegisterComponent {
       this.registerForm.markAllAsTouched();
       return;
     }
-    // this is validation check exist email
-    this.authServices.signIn().subscribe((data) => {
-      this.userData = data;
-      let registerEmail = this.registerForm.get('email')?.value;
-      let isEmail = this.userData.some(
-        (user: any) => user.email === registerEmail
-      );
-      console.log(isEmail);
-      if (isEmail) {
-        console.log('Email match');
-      } else {
-        console.log('Email does not match');
-      }
-    });
-
-    // this is validation confirm password
+        // this is validation confirm password
     let password = this.registerForm.get('password')?.value;
     let showConfirmPassword = this.registerForm.get('ConfirmPassword')?.value;
     if (password === showConfirmPassword) {
@@ -115,17 +97,31 @@ export class RegisterComponent {
       this.confirmPassword = true;
       return;
     }
-
-    // this is sign up
-    this.authServices.signUp(this.registerForm.value).subscribe(
-      (res) => {
-        this.valueValid = true;
-      },
-      (err) => {
-        this.valueInvalid = true;
-      }
-    );
-  }
+    // this is validation check exist email
+    this.authServices.signIn().subscribe((data) => {
+      this.userData = data;
+      let registerEmail = this.registerForm.get('email')?.value;
+      
+      for (let user of this.userData) {
+        if (registerEmail === user.email) {
+          this.submitted = false;
+          this.valueInvalid = true; 
+          this.isDuplicateEmail = true;
+          return;
+        }
+      }      
+      this.submitted = true;
+      this.authServices.signUp(this.registerForm.value).subscribe(
+        (res) => {
+          this.valueValid = true;
+        },
+        (err) => {
+          this.valueInvalid = true;
+        }
+      );
+    });
+ 
+}
   // this is signUp Valid
   signUp() {
     this.valueValid = !this.valueValid;
