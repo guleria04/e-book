@@ -1,29 +1,19 @@
-import { Component } from '@angular/core'; 
-import { AuthService } from 'src/app/services/auth/auth.service';
+import { Component } from '@angular/core';  
+import { ProductService } from 'src/app/services/product/product.service';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent { 
-  table:any;
-  classToggled = false; 
-  userData: any =[];
-  constructor(private authServices: AuthService,) {}
-  ngOnInit() { 
-    this.authServices.signIn().subscribe((data =>{
-      console.log(data)
-      this.userData=data;
-      if(data === true) {
-        this.table.append('<tr><td></td></tr>');
-      }
-    }))
-    
-  }
-  // svg color
-  svgIcon() {
-   this.classToggled = !this.classToggled;
-  }
+  productImg:any;
+  constructor(private productServices: ProductService){}
 
-  
+  ngOnInit() {
+    this.productServices.getProducts().subscribe((data: any) => {
+      this.productImg = data;
+    })
+  }
 }
+ 
