@@ -22,6 +22,8 @@ export class UploadProductComponent {
     price: new FormControl('', Validators.required), 
     image: new FormControl('', Validators.required), 
   });
+
+  // upload product validation 
   get authorName() {
     return this.uploadProduct.get('name');
   }
@@ -40,28 +42,35 @@ export class UploadProductComponent {
   get uploadImage() {
     return this.uploadProduct.get('image')
   }
- 
-  onSelectFile(event: any) {
-    const input = event.target;
-    this.fileName = input.files[0].name;
-  }
+  // upload alert message
   uploadFile() {
     this.valueValid = !this.valueValid;
   }
   uploadInValidFile() {
     this.valueInvalid = !this.valueInvalid;
   }
+  //  upload image 
+  onSelectFile(event: any) {
+    const input = event.target;
+     this.fileName = input.files[0].name;
+    console.log(this.fileName)
+  }
+  // submit upload product images 
   onUpload() {
     this.submitted = true;
+    var formData = new FormData();
+    // this is validation message
     if (this.uploadProduct.invalid) {
       this.uploadProduct.markAllAsTouched();
       return;
     }
+    // this is product upload 
     this.productUpload.uploadProduct(this.uploadProduct.value).subscribe(
       (res) => {
+        debugger
         this.valueValid = true;
         this.bookImageProduct = res;
-        console.log(res);
+        this.fileName;
       },
       (err) => {
         this.valueInvalid = true;
@@ -69,4 +78,3 @@ export class UploadProductComponent {
     );
   }
 }
- 
