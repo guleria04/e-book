@@ -11,19 +11,20 @@ export class UploadProductComponent {
   valueValid: boolean = false;
   valueInvalid: boolean = false;
   bookImageProduct: any = [];
-  fileName: string = '';
-  submitted= false;
-  constructor(private productUpload: ProductService) { }
+  ImageName: string = '';
+  submitted = false;
+  bookData: any = [];
+  constructor(private productUpload: ProductService) {}
   uploadProduct: FormGroup = new FormGroup({
     name: new FormControl('', Validators.required),
     author: new FormControl('', Validators.required),
     binding: new FormControl('', Validators.required),
     language: new FormControl('', Validators.required),
-    price: new FormControl('', Validators.required), 
-    image: new FormControl('', Validators.required), 
+    price: new FormControl('', Validators.required),
+    image: new FormControl('', Validators.required),
   });
 
-  // upload product validation 
+  // upload product validation
   get authorName() {
     return this.uploadProduct.get('name');
   }
@@ -40,7 +41,7 @@ export class UploadProductComponent {
     return this.uploadProduct.get('price');
   }
   get uploadImage() {
-    return this.uploadProduct.get('image')
+    return this.uploadProduct.get('image');
   }
   // upload alert message
   uploadFile() {
@@ -49,32 +50,39 @@ export class UploadProductComponent {
   uploadInValidFile() {
     this.valueInvalid = !this.valueInvalid;
   }
-  //  upload image 
+  //  upload image
   onSelectFile(event: any) {
     const input = event.target;
-     this.fileName = input.files[0].name;
-    console.log(this.fileName)
+    this.ImageName = input.files[0].name;
   }
-  // submit upload product images 
+  // submit upload product images
   onUpload() {
     this.submitted = true;
-    var formData = new FormData();
     // this is validation message
     if (this.uploadProduct.invalid) {
       this.uploadProduct.markAllAsTouched();
       return;
     }
-    // this is product upload 
-    this.productUpload.uploadProduct(this.uploadProduct.value).subscribe(
-      (res) => {
-        debugger
-        this.valueValid = true;
-        this.bookImageProduct = res;
-        this.fileName;
-      },
-      (err) => {
-        this.valueInvalid = true;
-      }
-    );
+    // upload product data value
+    this.bookData = this.uploadProduct.value;
+    // this is product upload
+    this.productUpload
+      .uploadProduct({
+        name: this.bookData.name,
+        author: this.bookData.author,
+        binding: this.bookData.binding,
+        language: this.bookData.language,
+        price: this.bookData.price,
+        image: this.ImageName,
+      })
+      .subscribe(
+        (res: any) => {
+          this.valueValid = true;
+          this.bookImageProduct = res;
+        },
+        (err) => {
+          this.valueInvalid = true;
+        }
+      );
   }
 }

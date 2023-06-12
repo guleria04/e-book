@@ -119,136 +119,22 @@
   ],
   "product": [
     {
-      "name": "Simplicity",
-      "author": "Great water",
-      "binding": "Publisher",
-      "language": "English",
-      "price": "$ 100",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0F_EwyBc1K2VDf529jXBfy_PiPVV0c47GBQ&usqp=CAU",
-      "id": 1
-    },
-    {
-      "name": "gfgdfg",
-      "author": "fgdfg",
-      "binding": "Publisher",
-      "language": "English",
-      "price": "4354",
-      "image": "C:\\fakepath\\pexels-photo-460672.webp",
-      "id": 2
-    },
-    {
-      "name": "dfsf",
-      "author": "dfsfd",
+      "name": "fdsgdg",
+      "author": "gdfg",
       "binding": "Publisher",
       "language": "English",
       "price": "3435",
-      "image": "C:\\fakepath\\pexels-photo-460672.webp",
-      "id": 3
+      "image": "pew.jpg",
+      "id": 1
     },
     {
-      "id": 4
-    },
-    {
-      "id": 5
-    },
-    {
-      "name": "dfsdf",
-      "author": "dfsfd",
-      "binding": "Publisher",
-      "language": "English",
-      "price": "3543",
-      "image": "C:\\fakepath\\pexels-photo-460672.webp",
-      "id": 6
-    },
-    {
-      "name": "gghj",
-      "author": "jhfghj",
-      "binding": "Kinder",
-      "language": "English",
-      "price": "6545",
-      "image": "C:\\fakepath\\aerial-beautiful-shot-seashore-with-hills-background-sunset_181624-24143.avif",
-      "id": 7
-    },
-    {
-      "name": "dsfdf",
-      "author": "fsdf",
-      "binding": "3",
-      "language": "Hindi",
-      "price": "5345",
-      "image": "C:\\fakepath\\aerial-beautiful-shot-seashore-with-hills-background-sunset_181624-24143.avif",
-      "id": 8
-    },
-    {
-      "name": "sdfsdf",
-      "author": "dfsdf",
-      "binding": "3",
-      "language": "English",
-      "price": "4535",
-      "image": "C:\\fakepath\\aerial-beautiful-shot-seashore-with-hills-background-sunset_181624-24143.avif",
-      "id": 9
-    },
-    {
-      "name": "sdfsdf",
-      "author": "dfsdf",
-      "binding": "3",
-      "language": "English",
-      "price": "4535",
-      "image": "C:\\fakepath\\pexels-photo-460672.webp",
-      "id": 10
-    },
-    {
-      "name": "hbjdh",
-      "author": "sdhihij",
+      "name": "dsd",
+      "author": "gdsd",
       "binding": "Kinder",
       "language": "Hindi",
-      "price": "1111",
-      "image": "C:\\fakepath\\aerial-beautiful-shot-seashore-with-hills-background-sunset_181624-24143.avif",
-      "id": 11
-    },
-    {
-      "name": "hbjdh",
-      "author": "sdhihij",
-      "binding": "Kinder",
-      "language": "Hindi",
-      "price": "1111",
-      "image": "C:\\fakepath\\aerial-beautiful-shot-seashore-with-hills-background-sunset_181624-24143.avif",
-      "id": 12
-    },
-    {
-      "name": "hbjdh",
-      "author": "sdhihij",
-      "binding": "Kinder",
-      "language": "Hindi",
-      "price": "1111",
-      "image": "C:\\fakepath\\aerial-beautiful-shot-seashore-with-hills-background-sunset_181624-24143.avif",
-      "id": 13
-    },
-    {
-      "name": "hbjdh",
-      "author": "sdhihij",
-      "binding": "Kinder",
-      "language": "Hindi",
-      "price": "1111",
-      "image": "C:\\fakepath\\aerial-beautiful-shot-seashore-with-hills-background-sunset_181624-24143.avif",
-      "id": 14
-    },
-    {
-      "name": "sdsdf",
-      "author": "dfsadf",
-      "binding": "Kinder",
-      "language": "Hindi",
-      "price": "434",
-      "image": "C:\\fakepath\\aerial-beautiful-shot-seashore-with-hills-background-sunset_181624-24143.avif",
-      "id": 15
-    },
-    {
-      "name": "sdsdf",
-      "author": "dfsadf",
-      "binding": "Kinder",
-      "language": "Hindi",
-      "price": "434",
-      "image": "C:\\fakepath\\aerial-beautiful-shot-seashore-with-hills-background-sunset_181624-24143.avif",
-      "id": 16
+      "price": "33",
+      "image": "stranger.png",
+      "id": 2
     }
   ]
 }
