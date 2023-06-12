@@ -9,6 +9,7 @@ import { ProductService } from 'src/app/services/product/product.service';
 export class HomeComponent { 
   productImg:any; 
   constructor(private productServices: ProductService){}
+  // this is get Product Image API
   ngOnInit() {
     this.productServices.getProducts().subscribe((data: any) => {
       this.productImg = data;

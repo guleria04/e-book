@@ -1,6 +1,7 @@
 <!-- upload product -->
 <section class="container-fluid mb-5">
   <div class="row m-0">
+    <!-- submit message  -->
     <div class="col-12 position-relative">
       <div class="align-items-center text-bg-success border-0 rounded-0 position-absolute top-0 end-0 m-3 shadow"
         *ngIf="valueValid">
@@ -17,14 +18,16 @@
             (click)="uploadInValidFile()"></button>
         </div>
       </div>
-    </div>
-    <!-- upload product -->
+    </div> 
+    <!-- /submit message  -->
+    <!-- upload Product form -->
     <div class="col-md-3 m-auto my-5">
       <div class="card p-3 shadow-sm rounded-0 border-0">
         <div class="card-header bg-white border-0">
           <h5 class="card-title text-center text-primary">Upload Product</h5>
         </div>
         <div class="card-body">
+          <!-- form -->
           <form [formGroup]="uploadProduct" (ngSubmit)="onUpload()">
             <div class="mb-3">
               <label class="form-label small text-muted">Name<span class="text-danger">*</span></label>
@@ -47,7 +50,7 @@
                 <span class="text-danger mt-1 small" *ngIf="productBinding && productBinding.invalid && productBinding.touched">This is required field.</span>
             </div>
             <div class="mb-3">
-              <label class="form-label small text-muted">Langua ge<span class="text-danger">*</span></label>
+              <label class="form-label small text-muted">Language<span class="text-danger">*</span></label>
                 <select class="form-select shadow-sm rounded-0" formControlName="language">
                   <option value="English" selected="">English</option>
                   <option value="Hindi">Hindi</option>
@@ -98,13 +101,11 @@
               Upload
             </button>
           </form>
-          <!-- /registration  form  -->
+         <!-- /form -->
         </div>
       </div>
-    </div>
-     <!-- upload product -->
+    </div> 
+     <!-- / upload Product form  -->
   </div>
 </section>
-
-
 <!-- upload product -->

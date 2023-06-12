@@ -9,8 +9,7 @@ import { ProductService } from 'src/app/services/product/product.service';
 })
 export class UploadProductComponent {
   valueValid: boolean = false;
-  valueInvalid: boolean = false;
-  bookImageProduct: any = [];
+  valueInvalid: boolean = false; 
   ImageName: string = '';
   submitted = false;
   bookData: any = [];
@@ -77,8 +76,7 @@ export class UploadProductComponent {
       })
       .subscribe(
         (res: any) => {
-          this.valueValid = true;
-          this.bookImageProduct = res;
+          this.valueValid = true; 
         },
         (err) => {
           this.valueInvalid = true;
