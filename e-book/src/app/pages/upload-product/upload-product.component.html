@@ -40,14 +40,14 @@
             <div class="mb-3">
               <label class="form-label small text-muted">Binding<span class="text-danger">*</span></label>
                 <select class="form-select shadow-sm rounded-0" formControlName="binding">
-                  <option value="Publisher" selected="Publisher">Publisher</option>
+                  <option value="Publisher" selected="Publisher">Paperback</option>
                   <option value="Kinder">Kinder Edition</option>
-                  <option value="3">Three</option>
+                  <option value="3">Hardcover</option>
                 </select>
                 <span class="text-danger mt-1 small" *ngIf="productBinding && productBinding.invalid && productBinding.touched">This is required field.</span>
             </div>
             <div class="mb-3">
-              <label class="form-label small text-muted">Language<span class="text-danger">*</span></label>
+              <label class="form-label small text-muted">Langua ge<span class="text-danger">*</span></label>
                 <select class="form-select shadow-sm rounded-0" formControlName="language">
                   <option value="English" selected="">English</option>
                   <option value="Hindi">Hindi</option>

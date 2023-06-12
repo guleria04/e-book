@@ -119,22 +119,67 @@
   ],
   "product": [
     {
-      "name": "fdsgdg",
-      "author": "gdfg",
+      "name": "Simplicity",
+      "author": "gretchen stewart",
       "binding": "Publisher",
       "language": "English",
-      "price": "3435",
-      "image": "pew.jpg",
-      "id": 1
+      "price": "100",
+      "image": "simplicity.jpg",
+      "id": 2
     },
     {
-      "name": "dsd",
-      "author": "gdsd",
+      "name": "Kilo",
+      "author": "Jon Lee Anderson",
       "binding": "Kinder",
-      "language": "Hindi",
-      "price": "33",
-      "image": "stranger.png",
-      "id": 2
+      "language": "English",
+      "price": "150",
+      "image": "kilo.jpg",
+      "id": 3
+    },
+    {
+      "name": "PEW",
+      "author": "Catherine Lacey",
+      "binding": "Publisher",
+      "language": "English",
+      "price": "230",
+      "image": "pew.jpg",
+      "id": 4
+    },
+    {
+      "name": "Unwritten Rules of Life",
+      "author": "Sherry E",
+      "binding": "3",
+      "language": "English",
+      "price": "52",
+      "image": "unwritten-rules-of-life.jpg",
+      "id": 5
+    },
+    {
+      "name": "Prisoner",
+      "author": "Arthur Miller",
+      "binding": "3",
+      "language": "English",
+      "price": "120",
+      "image": "prisoner.jpg",
+      "id": 6
+    },
+    {
+      "name": "My Heart Bleeds",
+      "author": "Taylor ",
+      "binding": "3",
+      "language": "English",
+      "price": "150",
+      "image": "my-heart-bleeds-ink.jpg",
+      "id": 7
+    },
+    {
+      "name": "Pshycology Of Money",
+      "author": "Morgan Housle",
+      "binding": "Kinder",
+      "language": "English",
+      "price": "151",
+      "image": "phychology-of-money.jpg",
+      "id": 8
     }
   ]
 }

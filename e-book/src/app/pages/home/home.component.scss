@@ -1,13 +1,20 @@
-.card {
-    transition: transform 1s;
- }
- .card:hover{
-    transform: scale(1.02,1.02);
-  }
-  .wishlist-select-card {
- fill: #F05FA3;
-  }
+.e-book { 
+   width: 350px;
+  .card {
+   transition: transform 1s;
  
-  span {
-   cursor: pointer;
-  }
+   &:hover {
+     transform: scale(1.02, 1.02);
+   }
+   img {
+      height: 350px !important;
+   }
+   .wishlist-select-card {
+     fill: #f05fa3;
+   }
+   span {
+     cursor: pointer;
+   }
+ }
+ 
+}
