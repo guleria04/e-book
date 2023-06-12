@@ -21,23 +21,15 @@ export class HomeComponent  {
   }
 
   // active class
-  wishlistToggle(event: any) {
+  wishlistToggle(event:any){
     const activeClass = event.srcElement.classList.contains('CardWishList');
-    const classFound = document.querySelector('card');
-    const card = classFound?.classList.contains('CardWishList');
-    if (activeClass == true) {
-      if (card == true) {
-        classFound?.classList.remove('CardWishList');
-      }
+    if (activeClass == true){
       event.srcElement.classList.remove('CardWishList');
-    } else {
-      if (card == true) {
-        classFound?.classList.remove('CardWishList');
-      }
+    }else {
       event.srcElement.classList.add('CardWishList');
     }
     let activeLength = document.querySelectorAll('.CardWishList')
     console.log((activeLength).length)
   }
+  }
  
-}
