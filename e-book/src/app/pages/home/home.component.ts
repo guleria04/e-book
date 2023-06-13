@@ -1,35 +1,33 @@
 import { Component } from '@angular/core';
 import { ProductService } from 'src/app/services/product/product.service';
-
+import { WishlistService } from 'src/app/services/wishlist.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent  {
-  productImg: any;    
-  constructor(private productServices: ProductService) {}
+export class HomeComponent {
+  productImg: any;
+  constructor(private productServices: ProductService, private wishList: WishlistService) { }
   // this is get Product Image API
-  ngOnInit() {
+  ngOnInit(): void {
     this.fetchCardsFromApi();
   }
-  
   fetchCardsFromApi() {
     this.productServices.getProducts().subscribe((data: any) => {
       this.productImg = data;
     });
   }
-
-  // active class
-  wishlistToggle(event:any){
+  // active class add and remove
+  wishlistToggle(event: any) {
     const activeClass = event.srcElement.classList.contains('CardWishList');
-    if (activeClass == true){
+    if (activeClass == true) {
       event.srcElement.classList.remove('CardWishList');
-    }else {
+    } else {
       event.srcElement.classList.add('CardWishList');
     }
-    let activeLength = document.querySelectorAll('.CardWishList')
-    console.log((activeLength).length)
+    const selectWishCount = document.querySelectorAll('.CardWishList').length;
+    this.wishList.setWishlistCount(selectWishCount);
+    // console.log(this.wishList.getWishlistCount());
   }
-  }
- 
+}

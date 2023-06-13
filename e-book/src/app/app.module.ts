@@ -13,6 +13,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { UploadProductComponent } from './pages/upload-product/upload-product.component';
+import { WishlistService } from './services/wishlist.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { UploadProductComponent } from './pages/upload-product/upload-product.co
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [WishlistService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

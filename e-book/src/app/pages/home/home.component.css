@@ -1,0 +1,18 @@
+.e-book {
+  width: 372px;
+}
+.e-book .card {
+  transition: transform 1s;
+}
+.e-book .card:hover {
+  transform: scale(1.02, 1.02);
+}
+.e-book .card img {
+  height: 350px !important;
+}
+.e-book .card .CardWishList {
+  fill: #f05fa3;
+}
+.e-book .card span {
+  cursor: pointer;
+}/*# sourceMappingURL=home.component.css.map */
