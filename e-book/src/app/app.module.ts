@@ -7,7 +7,7 @@ import { ForgotPasswordComponent } from './account/forgot-password/forgot-passwo
 import { LoginComponent } from './account/login/login.component';
 import { RegisterComponent } from './account/register/register.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './pages/home/home.component';
 import { HeaderComponent } from './shared/header/header.component';
@@ -26,13 +26,14 @@ import { WishlistService } from './services/wishlist.service';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    UploadProductComponent,
+    UploadProductComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [WishlistService],
   bootstrap: [AppComponent]

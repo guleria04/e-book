@@ -148,7 +148,7 @@
     {
       "name": "Unwritten Rules of Life",
       "author": "Sherry E",
-      "binding": "3",
+      "binding": "Publisher",
       "language": "English",
       "price": "52",
       "image": "unwritten-rules-of-life.jpg",
@@ -157,7 +157,7 @@
     {
       "name": "Prisoner",
       "author": "Arthur Miller",
-      "binding": "3",
+      "binding": "Publisher",
       "language": "English",
       "price": "120",
       "image": "prisoner.jpg",
@@ -166,7 +166,7 @@
     {
       "name": "My Heart Bleeds",
       "author": "Taylor ",
-      "binding": "3",
+      "binding": "Publisher",
       "language": "English",
       "price": "150",
       "image": "my-heart-bleeds-ink.jpg",
@@ -180,6 +180,33 @@
       "price": "151",
       "image": "phychology-of-money.jpg",
       "id": 8
+    },
+    {
+      "name": "Millo Se Din",
+      "author": "Guljar",
+      "binding": "Publisher",
+      "language": "Hindi",
+      "price": "200",
+      "image": "millo-se-din.jpg",
+      "id": 9
+    },
+    {
+      "name": "Forge Your Future",
+      "author": "APJB Kalam",
+      "binding": "Publisher",
+      "language": "Hindi",
+      "price": "500",
+      "image": "forge-you-future.webp",
+      "id": 10
+    },
+    {
+      "name": "The Moral Infection",
+      "author": "Micheal ",
+      "binding": "Publisher",
+      "language": "English",
+      "price": "100",
+      "image": "the-moral-infection.jpg",
+      "id": 11
     }
   ]
 }

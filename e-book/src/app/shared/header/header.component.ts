@@ -8,6 +8,7 @@ import { WishlistService } from 'src/app/services/wishlist.service';
 export class HeaderComponent {
   wishlistNumber: any;
   constructor(private WishlistService: WishlistService) {}
+ 
   ngDoCheck() {
     this.wishlistNumber = this.WishlistService.getWishlistCount();
   }

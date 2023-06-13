@@ -7,7 +7,8 @@ import { WishlistService } from 'src/app/services/wishlist.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  productImg: any;
+  productImg: any; 
+  languageFilter: string = ''; 
   constructor(private productServices: ProductService, private WishlistService: WishlistService) { }
   // this is get Product Image API
   ngOnInit(): void {
@@ -31,4 +32,9 @@ export class HomeComponent {
     this.WishlistService.setWishlistCount(selectWishCount);
     this.WishlistService.getWishlistCount();
   }
+// this filter language
+ 
+
+
+
 }

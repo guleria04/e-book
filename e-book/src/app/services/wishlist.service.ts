@@ -4,14 +4,14 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class WishlistService {
-  wishlistCount: any;
+  wishlistCount: number= 0 ;
   constructor() { }
   // this is add count wishlist 
   setWishlistCount(count: any): void {
     this.wishlistCount = count;
   }
   // this is show count wishlist 
-  getWishlistCount(): any {
+  getWishlistCount(): any  {
     this.wishlistCount;
     // console.log(this.wishlistCount)
     return this.wishlistCount;
