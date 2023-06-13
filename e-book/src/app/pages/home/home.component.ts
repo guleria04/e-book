@@ -32,9 +32,4 @@ export class HomeComponent {
     this.WishlistService.setWishlistCount(selectWishCount);
     this.WishlistService.getWishlistCount();
   }
-// this filter language
- 
-
-
-
 }

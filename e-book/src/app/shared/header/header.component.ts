@@ -6,10 +6,11 @@ import { WishlistService } from 'src/app/services/wishlist.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  wishlistNumber: any;
+  wishlistNumber: any; 
   constructor(private WishlistService: WishlistService) {}
  
   ngDoCheck() {
     this.wishlistNumber = this.WishlistService.getWishlistCount();
+   
   }
 }
