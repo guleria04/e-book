@@ -8,7 +8,7 @@ import { WishlistService } from 'src/app/services/wishlist.service';
 })
 export class HomeComponent {
   productImg: any;
-  constructor(private productServices: ProductService, private wishList: WishlistService) { }
+  constructor(private productServices: ProductService, private WishlistService: WishlistService) { }
   // this is get Product Image API
   ngOnInit(): void {
     this.fetchCardsFromApi();
@@ -26,8 +26,9 @@ export class HomeComponent {
     } else {
       event.srcElement.classList.add('CardWishList');
     }
+    // this is count length wishlist 
     const selectWishCount = document.querySelectorAll('.CardWishList').length;
-    this.wishList.setWishlistCount(selectWishCount);
-    // console.log(this.wishList.getWishlistCount());
+    this.WishlistService.setWishlistCount(selectWishCount);
+    this.WishlistService.getWishlistCount();
   }
 }
