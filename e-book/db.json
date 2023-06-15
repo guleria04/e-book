@@ -121,7 +121,7 @@
     {
       "name": "Simplicity",
       "author": "gretchen stewart",
-      "binding": "Publisher",
+      "binding": "Paperback",
       "language": "English",
       "price": "100",
       "image": "simplicity.jpg",
@@ -139,7 +139,7 @@
     {
       "name": "PEW",
       "author": "Catherine Lacey",
-      "binding": "Publisher",
+      "binding": "Paperback",
       "language": "English",
       "price": "230",
       "image": "pew.jpg",
@@ -148,7 +148,7 @@
     {
       "name": "Unwritten Rules of Life",
       "author": "Sherry E",
-      "binding": "Publisher",
+      "binding": "Paperback",
       "language": "English",
       "price": "52",
       "image": "unwritten-rules-of-life.jpg",
@@ -157,7 +157,7 @@
     {
       "name": "Prisoner",
       "author": "Arthur Miller",
-      "binding": "Publisher",
+      "binding": "Paperback",
       "language": "English",
       "price": "120",
       "image": "prisoner.jpg",
@@ -166,7 +166,7 @@
     {
       "name": "My Heart Bleeds",
       "author": "Taylor ",
-      "binding": "Publisher",
+      "binding": "Hardcover",
       "language": "English",
       "price": "150",
       "image": "my-heart-bleeds-ink.jpg",
@@ -184,7 +184,7 @@
     {
       "name": "Millo Se Din",
       "author": "Guljar",
-      "binding": "Publisher",
+      "binding": "Hardcover",
       "language": "Hindi",
       "price": "200",
       "image": "millo-se-din.jpg",
@@ -193,7 +193,7 @@
     {
       "name": "Forge Your Future",
       "author": "APJB Kalam",
-      "binding": "Publisher",
+      "binding": "Hardcover",
       "language": "Hindi",
       "price": "500",
       "image": "forge-you-future.webp",
@@ -202,7 +202,7 @@
     {
       "name": "The Moral Infection",
       "author": "Micheal ",
-      "binding": "Publisher",
+      "binding": "Kinder",
       "language": "English",
       "price": "100",
       "image": "the-moral-infection.jpg",

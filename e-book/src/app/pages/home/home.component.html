@@ -2,20 +2,41 @@
 <section class="container-fluid my-5" id="homeProduct">
   <div class="row g-2">
     <!-- filter button -->
-    <div class="col-12 py-3 gap-2">
+    <div class="col-12 py-3">
       <div class="filter float-end me-4">
-        <select class="form-select shadow-sm small" [(ngModel)]="languageFilter">
-          <option selected class="small">Sort by: language</option>
-          <option class="small" value="English">English</option>
-          <option class="small" value="Hindi">Hindi</option>
+        <select class="form-select shadow-sm small" [(ngModel)]="searchLanguage">
+          <option value="all">Sort by: language</option>
+          <option value="all">All</option>
+          <option value="English">English</option>
+          <option value="Hindi">Hindi</option>
+        </select>
+      </div>
+      <div class="filter float-end me-4">
+        <select class="form-select shadow-sm small"  size="1" [(ngModel)]="searchBinding">
+          <option value="all">Sort by: Binding</option>
+          <option value="all">All</option>
+          <option value="Paperback">Paperback</option>
+          <option value="Kinder">Kinder Edition</option>
+          <option value="Hardcover">Hardcover</option>
+        </select>
+      </div>
+      <div class="filter float-end me-4">
+        <select class="form-select shadow-sm small"  size="1" [(ngModel)]="searchPrice">
+          <option value="all">Sort by: Price</option>
+          <option value="all">All</option>
+          <option value="50 to 100">50+</option>
+          <option value="100">100</option>
+          <option value="150">150</option>
+          <option value="200">200</option>
+          <option value="500">500</option>
         </select>
       </div>
     </div>
     <!-- /filter button -->
-    <div class="col-12 col-md-6 col-lg-3 e-book" *ngFor="let product of productImg">
+    <div class="col-12 col-md-6 col-lg-3 e-book" *ngFor="let product of productImg | filter: searchLanguage:searchBinding:searchPrice">
       <!-- card -->
       <div class="card shadow-sm rounded-0 border-0 position-relative">
-        <img src="/assets/image/{{ product.image }}" class="img-fluid object-fit-fill border-bottom" alt="nature" />
+        <img src="/assets/image/{{product.image}}" class="img-fluid object-fit-fill border-bottom" alt="nature" />
         <span class="position-absolute top-0 end-0 m-2 border rounded-5 p-1 bg-white shadow-sm pe-auto">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
             (click)="wishlistToggle($event)">
@@ -25,14 +46,14 @@
         </span>
         <div class="card-body">
           <div class="card-title small fs-6 fw-semibold mb-0">
-            ${{ product.price }}
+            ${{product.price}}
           </div>
-          <h5 class="card-text text-capitalize">{{ product.name }}</h5>
+          <h5 class="card-text text-capitalize">{{product.name}}</h5>
           <p class="card-text text-capitalize small m-0">
-            {{ product.author }}
+            {{product.author}}
           </p>
           <p class="card-text text-capitalize small m-0">
-            {{ product.binding }} , {{ product.language }}
+            {{ product.binding }} , {{product.language}}
           </p>
           <p class="star-rating mb-3">
             <span>

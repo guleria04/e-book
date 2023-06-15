@@ -14,6 +14,8 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { UploadProductComponent } from './pages/upload-product/upload-product.component';
 import { WishlistService } from './services/wishlist.service';
+import { CommonModule } from '@angular/common';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
@@ -26,14 +28,17 @@ import { WishlistService } from './services/wishlist.service';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    UploadProductComponent
+    UploadProductComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CommonModule
+
   ],
   providers: [WishlistService],
   bootstrap: [AppComponent]

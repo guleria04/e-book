@@ -7,10 +7,15 @@ import { WishlistService } from 'src/app/services/wishlist.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  productImg: any; 
-  languageFilter: string = ''; 
   constructor(private productServices: ProductService, private WishlistService: WishlistService) { }
-  // this is get Product Image API
+  productImg: any;  
+
+  // this is filter for language
+  searchLanguage: string = 'all';
+  searchBinding: string = 'all';
+  searchPrice: any = 'all';
+   
+  // this is get Product Image from API
   ngOnInit(): void {
     this.fetchCardsFromApi();
   }
@@ -31,5 +36,5 @@ export class HomeComponent {
     const selectWishCount = document.querySelectorAll('.CardWishList').length;
     this.WishlistService.setWishlistCount(selectWishCount);
     this.WishlistService.getWishlistCount();
-  }
+  } 
 }
