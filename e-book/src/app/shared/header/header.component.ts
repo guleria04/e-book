@@ -28,10 +28,10 @@ export class HeaderComponent {
   } 
 
  searchData() {
-  const searchTermLowerCase = this.searchBox.toLowerCase();
-   this.products.filter((product: any) => { 
-    return product.name.toLowerCase().includes(searchTermLowerCase);
-  });
+  // const searchTermLowerCase = this.searchBox.toLowerCase();
+  //  this.products.filter((product: any) => { 
+  //   return product.name.toLowerCase().includes(searchTermLowerCase);
+  // });
  }
 }
  
