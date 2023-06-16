@@ -12,8 +12,7 @@ export class WishlistService {
   }
   // this is show count wishlist 
   getWishlistCount(): any  {
-    this.wishlistCount;
-    // console.log(this.wishlistCount)
+    this.wishlistCount; 
     return this.wishlistCount;
   }
 }
