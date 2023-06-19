@@ -207,6 +207,15 @@
       "price": "100",
       "image": "the-moral-infection.jpg",
       "id": 11
+    },
+    {
+      "name": "Mad Money",
+      "author": "Jeniffer",
+      "binding": "Paperback",
+      "language": "English",
+      "price": "350",
+      "image": "images.jpeg",
+      "id": 12
     }
   ]
 }

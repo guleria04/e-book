@@ -7,7 +7,8 @@
     <!-- search bar -->
     <div class="w-50 position-relative">
       <span>
-        <input type="text" class="form-control rounded-0 shadow-sm" id="searchBar" placeholder="Search books" [(ngModel)]="searchBox" (input)="searchData()" />
+        <input type="text" class="form-control rounded-0 shadow-sm" id="searchBar"
+         placeholder="Search books" [(ngModel)]="searchBox" (input)="searchData()" />
       </span>
       <span class="position-absolute top-0 end-0 me-3 pt-1">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="text-secondary mt-1">
@@ -15,9 +16,6 @@
             d="m21 21l-4.343-4.343m0 0A8 8 0 1 0 5.343 5.343a8 8 0 0 0 11.314 11.314Z" />
         </svg>
       </span>
-    </div>
-    <div *ngFor="let product of filteredProducts">
-        {{product.name}}
     </div>
       <!-- /search bar -->
     <!-- btn login & upload product -->

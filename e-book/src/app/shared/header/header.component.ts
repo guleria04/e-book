@@ -9,7 +9,7 @@ import { WishlistService } from 'src/app/services/wishlist.service';
 export class HeaderComponent {
   wishlistNumber: any; 
   products: any;   
-  searchBox:any;
+  searchBox:any = '';
   filteredProducts:any;
   constructor(private WishlistService: WishlistService, private productServices: ProductService) { }
   // this function check wishlist length
@@ -25,13 +25,16 @@ export class HeaderComponent {
       this.products = data;
       console.log(this.products)
     });
-  } 
+   }
 
- searchData() {
-  // const searchTermLowerCase = this.searchBox.toLowerCase();
-  //  this.products.filter((product: any) => { 
-  //   return product.name.toLowerCase().includes(searchTermLowerCase);
-  // });
+ searchData() { 
+    const searchTermLowerCase = this.searchBox.toLowerCase();
+    this.filteredProducts = this.products.filter((product: any) => {
+      console.log(searchTermLowerCase)
+      return product.name.toLowerCase().includes(searchTermLowerCase);
+     
+    });
+  }
  }
-}
+
  
