@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WishlistService {
-  wishlistCount: number= 0 ;
-  constructor() { }
+  wishlistCount: number = 0 ;
+  wishlists: any;
+  constructor(private http:HttpClient) {}
   // this is add count wishlist 
   setWishlistCount(count: any): void {
     this.wishlistCount = count;
@@ -14,5 +17,12 @@ export class WishlistService {
   getWishlistCount(): any  {
     this.wishlistCount; 
     return this.wishlistCount;
+  }
+  getWishCount() {
+    return this.http.get(environment.apiPath + 'wishlist',)
+  }
+  // store wishlist 
+  addWishlist(data:any) { 
+    return this.http.post(environment.apiPath +'wishlist', data);
   }
 }

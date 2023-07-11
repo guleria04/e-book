@@ -8,6 +8,7 @@ import { WishlistService } from 'src/app/services/wishlist.service';
 })
 export class HeaderComponent {
   wishlistNumber: any; 
+  wishlistCountNumber:any;
   products: any;   
   searchBox:any = '';
   filteredProducts:any;
@@ -18,19 +19,24 @@ export class HeaderComponent {
   }
   ngOnInit() {
     this.getProductData();
+ 
   }
   // this function for searching products 
   getProductData() {
     this.productServices.getProducts().subscribe((data: any) => {
-      this.products = data;
-      console.log(this.products)
+      this.products = data; 
+      // this is show wishlist count number
+    this.WishlistService.getWishCount().subscribe((data) =>{
+      console.log(data);
+      this.wishlistNumber = data;
+    })
     });
-   }
+   } 
 
  searchData() { 
     const searchTermLowerCase = this.searchBox.toLowerCase();
     this.filteredProducts = this.products.filter((product: any) => {
-      console.log(searchTermLowerCase)
+      // console.log(searchTermLowerCase)
       return product.name.toLowerCase().includes(searchTermLowerCase);
      
     });

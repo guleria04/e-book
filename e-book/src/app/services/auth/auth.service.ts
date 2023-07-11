@@ -8,7 +8,7 @@ export class AuthService {
   constructor(private http:HttpClient) { }
 // this is use for sign in 
   signIn() { 
-    return this.http.get(environment.apiPath +'admin');
+    return this.http.get(environment.apiPath +'user');
   }
 // this is user for sign up
  signUp(data:any) {

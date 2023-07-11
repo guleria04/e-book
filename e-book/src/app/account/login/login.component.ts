@@ -51,6 +51,7 @@ export class LoginComponent {
       (res: any) => {
         const userCredential = res.find((result: any) => {
           return (
+          
             result.email === this.loginForm.value.email &&
             result.password === this.loginForm.value.password
           );

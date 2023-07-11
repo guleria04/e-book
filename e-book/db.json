@@ -115,6 +115,15 @@
       "password": "123",
       "ConfirmPassword": "123",
       "id": 12
+    },
+    {
+      "firstName": "H",
+      "lastName": "Singh",
+      "city": "Mohali 5 Phase",
+      "email": "hardeepsingh@gmail.com",
+      "password": "1234",
+      "ConfirmPassword": "1234",
+      "id": 13
     }
   ],
   "product": [
@@ -216,6 +225,12 @@
       "price": "350",
       "image": "images.jpeg",
       "id": 12
+    }
+  ],
+  "wishlist": [
+    {
+      "wishlistCount": 0,
+      "id": 1
     }
   ]
 }
