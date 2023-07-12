@@ -229,8 +229,12 @@
   ],
   "wishlist": [
     {
-      "wishlistCount": 0,
+      "wishlistCount": 1,
       "id": 1
+    },
+    {
+      "wishlistCount": 2,
+      "id": 2
     }
   ]
 }

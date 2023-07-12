@@ -28,20 +28,34 @@ export class HomeComponent {
   // active class add and remove
   
   wishlistToggle(event: any) {
-    const activeClass = event.srcElement.classList.contains('CardWishList');
-    if (activeClass == true) {
-      event.srcElement.classList.remove('CardWishList');
+    const cardElement = event.srcElement;
+    const activeClass = cardElement.classList.contains('CardWishList');
+  
+    if (activeClass) {
+      cardElement.classList.remove('CardWishList');
     } else {
-      event.srcElement.classList.add('CardWishList');
-      this.WishlistService.addWishlist(this.WishlistService).subscribe(
-        (res) =>  {  
-          
-      })
+      cardElement.classList.add('CardWishList');
+      const selectWishCount = document.querySelectorAll('.CardWishList').length;
+      this.WishlistService.setWishlistCount(selectWishCount);
+  
+      // Create the wishlist data to send to the API
+      const wishlistData = {
+        wishlistCount: selectWishCount,
+      };
+  
+      this.WishlistService.addWishlist(wishlistData).subscribe(
+        (res) => {
+          // Handle the API response here
+          console.log(res);
+          this.WishlistService.getWishlistCount();
+        },
+        (error) => {
+          // Handle the API error here
+          console.error(error);
         }
-    // this is count length wishlist 
-    const selectWishCount = document.querySelectorAll('.CardWishList').length;
-    this.WishlistService.setWishlistCount(selectWishCount);
-    this.WishlistService.getWishlistCount();
-  } 
+      );
+    }
+  }
+  
  
 }
